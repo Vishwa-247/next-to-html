@@ -13,10 +13,10 @@ The first-time login password reset feature has been implemented for advocates. 
 
 Open your browser console and run:
 
-```javascript
+\`\`\`javascript
 localStorage.setItem("advocate_first_login", "true");
 localStorage.removeItem("advocate_password_changed");
-```
+\`\`\`
 
 Then refresh the advocate dashboard page. The password reset dialog will appear.
 
@@ -24,9 +24,9 @@ Then refresh the advocate dashboard page. The password reset dialog will appear.
 
 Open your browser console and run:
 
-```javascript
+\`\`\`javascript
 localStorage.clear();
-```
+\`\`\`
 
 Then refresh the advocate dashboard page. The dialog will appear for new users.
 
@@ -34,10 +34,10 @@ Then refresh the advocate dashboard page. The dialog will appear for new users.
 
 If you've already completed the password reset, you can test again by running:
 
-```javascript
+\`\`\`javascript
 localStorage.setItem("advocate_first_login", "true");
 localStorage.setItem("advocate_password_changed", "false");
-```
+\`\`\`
 
 Then refresh the page.
 
@@ -92,7 +92,7 @@ Currently, the password reset is mocked. To integrate with your backend:
 2. Find the `handleSubmit` function (around line 117)
 3. Uncomment the API call code:
 
-```typescript
+\`\`\`typescript
 const response = await fetch("/api/advocate/reset-password", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
@@ -109,7 +109,7 @@ if (!response.ok) {
   setError(data.message || "Failed to reset password");
   return;
 }
-```
+\`\`\`
 
 4. Create the API endpoint at `/app/api/advocate/reset-password/route.ts`
 
@@ -119,32 +119,32 @@ if (!response.ok) {
 
 **Request Body:**
 
-```json
+\`\`\`json
 {
   "currentPassword": "admin123",
   "newPassword": "MySecure@Pass123",
   "recoveryQuestion": "What is your mother's maiden name?",
   "recoveryAnswer": "Smith"
 }
-```
+\`\`\`
 
 **Success Response (200):**
 
-```json
+\`\`\`json
 {
   "success": true,
   "message": "Password reset successfully"
 }
-```
+\`\`\`
 
 **Error Response (400/401):**
 
-```json
+\`\`\`json
 {
   "success": false,
   "message": "Current password is incorrect"
 }
-```
+\`\`\`
 
 ## After Successful Reset
 

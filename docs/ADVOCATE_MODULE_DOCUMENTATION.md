@@ -269,7 +269,7 @@ This matches your screenshots showing:
 
 ## 5. File Structure
 
-```
+\`\`\`
 app/
   advocate/
     dashboard/
@@ -285,7 +285,7 @@ components/
     case-browser.tsx          # Browse available cases (updated with onNavigate)
     messages-module.tsx       # Messaging interface
     membership-payment.tsx    # Membership plans and payment (updated with onNavigate)
-```
+\`\`\`
 
 ## 6. Usage
 
@@ -300,12 +300,12 @@ components/
 
 All components accept an optional `onNavigate` prop for section switching:
 
-```tsx
+\`\`\`tsx
 <ProfileManagement onNavigate={setActiveSection} />
 <CaseBrowser onNavigate={setActiveSection} />
 <AdvocateMessagesModule onNavigate={setActiveSection} />
 <MembershipPayment onNavigate={setActiveSection} />
-```
+\`\`\`
 
 ## 7. Next Steps
 

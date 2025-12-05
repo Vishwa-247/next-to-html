@@ -96,7 +96,7 @@ When a report is submitted:
 
 ### File Structure
 
-```
+\`\`\`
 lib/
   content-filter.ts          # Profanity detection & validation
   moderation-api.ts          # API utilities for reporting
@@ -114,13 +114,13 @@ app/
         route.ts             # Fetch flagged content
       moderate-content/
         route.ts             # Moderate content (hide/remove/restore)
-```
+\`\`\`
 
 ### Usage Example
 
 #### In Sawaal Jawab (Q&A)
 
-```tsx
+\`\`\`tsx
 import { validateContent } from "@/lib/content-filter";
 import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
 
@@ -145,11 +145,11 @@ if (!validation.isValid) {
   contentType="question"
   contentId={questionId}
 />;
-```
+\`\`\`
 
 #### In Case Post System
 
-```tsx
+\`\`\`tsx
 import { validateContent } from "@/lib/content-filter";
 
 const validation = validateContent(
@@ -164,7 +164,7 @@ if (!validation.isValid) {
   setContentValidation(validation);
   return; // Block submission
 }
-```
+\`\`\`
 
 ## API Endpoints
 
@@ -174,7 +174,7 @@ Submit an abuse report.
 
 **Request Body:**
 
-```json
+\`\`\`json
 {
   "contentId": "123",
   "contentType": "question|answer|case|comment",
@@ -182,17 +182,17 @@ Submit an abuse report.
   "details": "Optional explanation",
   "anonymous": false
 }
-```
+\`\`\`
 
 **Response:**
 
-```json
+\`\`\`json
 {
   "success": true,
   "reportId": "report_xyz",
   "message": "Report submitted successfully"
 }
-```
+\`\`\`
 
 ### GET /api/moderation/flagged-content
 
@@ -211,7 +211,7 @@ Take moderation action (moderators only).
 
 **Request Body:**
 
-```json
+\`\`\`json
 {
   "contentId": "123",
   "contentType": "question",
@@ -219,13 +219,13 @@ Take moderation action (moderators only).
   "moderatorId": "mod_456",
   "reason": "Contains offensive content"
 }
-```
+\`\`\`
 
 ## Database Schema
 
 ### AbuseReports Table
 
-```sql
+\`\`\`sql
 CREATE TABLE abuse_reports (
   id VARCHAR(255) PRIMARY KEY,
   content_id VARCHAR(255) NOT NULL,
@@ -242,11 +242,11 @@ CREATE TABLE abuse_reports (
   INDEX idx_status (status),
   INDEX idx_timestamp (timestamp)
 );
-```
+\`\`\`
 
 ### FlaggedContent Table
 
-```sql
+\`\`\`sql
 CREATE TABLE flagged_content (
   id VARCHAR(255) PRIMARY KEY,
   content_id VARCHAR(255) NOT NULL,
@@ -259,11 +259,11 @@ CREATE TABLE flagged_content (
   INDEX idx_content (content_id, content_type),
   INDEX idx_status (status)
 );
-```
+\`\`\`
 
 ### ModerationActions Table
 
-```sql
+\`\`\`sql
 CREATE TABLE moderation_actions (
   id VARCHAR(255) PRIMARY KEY,
   content_id VARCHAR(255) NOT NULL,
@@ -275,13 +275,13 @@ CREATE TABLE moderation_actions (
   INDEX idx_content (content_id, content_type),
   INDEX idx_moderator (moderator_id)
 );
-```
+\`\`\`
 
 ## Environment Variables
 
 Add to `.env.local`:
 
-```env
+\`\`\`env
 # Moderator email addresses (comma-separated)
 MODERATOR_EMAILS=moderator1@example.com,moderator2@example.com
 
@@ -290,7 +290,7 @@ NEXT_PUBLIC_APP_URL=https://advocatekhoj.com
 
 # Email service configuration (example with Resend)
 RESEND_API_KEY=re_your_api_key
-```
+\`\`\`
 
 ## Moderation Dashboard (Future Enhancement)
 
@@ -357,7 +357,7 @@ Create an admin panel at `/admin/moderation` with:
 
 ### Unit Tests
 
-```typescript
+\`\`\`typescript
 import { containsProfanity, validateContent } from "@/lib/content-filter";
 
 describe("Content Filter", () => {
@@ -380,7 +380,7 @@ describe("Content Filter", () => {
     expect(validation.isValid).toBe(true);
   });
 });
-```
+\`\`\`
 
 ## Future Enhancements
 

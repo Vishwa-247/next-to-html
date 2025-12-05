@@ -17,12 +17,12 @@
 
 **Functions Provided:**
 
-```typescript
+\`\`\`typescript
 containsProfanity(text, strictMode); // Returns: { isProfane, matchedWords, severity }
 sanitizeText(text); // Replaces profanity with asterisks
 validateContent(content, strictMode); // Returns: { isValid, errors, warnings, blockedFields }
 getProfanityErrorMessage(severity); // User-friendly error messages
-```
+\`\`\`
 
 ### 2. Report Abuse System
 
@@ -216,7 +216,7 @@ getProfanityErrorMessage(severity); // User-friendly error messages
 
 ### Validate Content Before Posting
 
-```typescript
+\`\`\`typescript
 import { validateContent } from "@/lib/content-filter";
 
 const validation = validateContent(
@@ -233,11 +233,11 @@ if (!validation.isValid) {
 }
 
 // Proceed with post
-```
+\`\`\`
 
 ### Add Report Button
 
-```tsx
+\`\`\`tsx
 import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
 
 <Button onClick={() => setReportDialogOpen(true)}>
@@ -250,7 +250,7 @@ import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
   contentType="question"
   contentId={questionId}
 />
-```
+\`\`\`
 
 ## 🚀 Next Steps (Production)
 
@@ -301,7 +301,7 @@ import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
 
 ### Profanity Detection
 
-```typescript
+\`\`\`typescript
 // Should BLOCK
 "This is fucking terrible" → ❌ Blocked
 "f*ck this sh!t" → ❌ Blocked
@@ -312,11 +312,11 @@ import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
 
 // Should PASS
 "I need legal advice" → ✅ Allowed
-```
+\`\`\`
 
 ### Report Submission
 
-```typescript
+\`\`\`typescript
 // Valid report
 {
   contentId: 123,
@@ -331,7 +331,7 @@ import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
 Report #1 → Pending
 Report #2 → Pending
 Report #3 → Auto-flagged ⚠️
-```
+\`\`\`
 
 ## 🎨 UI/UX Features
 

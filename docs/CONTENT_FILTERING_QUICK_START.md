@@ -57,7 +57,7 @@
 
 ### Auto-Filter (Before Posting)
 
-```typescript
+\`\`\`typescript
 import { validateContent } from "@/lib/content-filter";
 
 // Validate content before submission
@@ -77,11 +77,11 @@ if (!validation.isValid) {
 
 // If valid, proceed with post
 submitPost(formData);
-```
+\`\`\`
 
 ### Report Abuse (After Posted)
 
-```tsx
+\`\`\`tsx
 import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
 
 // Add report button
@@ -100,7 +100,7 @@ import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
     // Automatically sends to API and notifies moderators
   }}
 />
-```
+\`\`\`
 
 ## Testing the System
 
@@ -134,7 +134,7 @@ import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
 
 ### Example: Add to Comments
 
-```tsx
+\`\`\`tsx
 import { validateContent } from "@/lib/content-filter";
 import { ReportAbuseDialog } from "@/components/moderation/report-abuse-dialog";
 
@@ -177,7 +177,7 @@ function CommentSection() {
     </>
   );
 }
-```
+\`\`\`
 
 ## Database Setup (Next Steps)
 
@@ -185,7 +185,7 @@ function CommentSection() {
 
 Run these SQL scripts (provided in documentation):
 
-```sql
+\`\`\`sql
 -- Abuse Reports
 CREATE TABLE abuse_reports (
   id VARCHAR(255) PRIMARY KEY,
@@ -208,13 +208,13 @@ CREATE TABLE flagged_content (
   status VARCHAR(50) DEFAULT 'active',
   ...
 );
-```
+\`\`\`
 
 ### 2. Update API Routes
 
 Replace mock data with actual database queries:
 
-```typescript
+\`\`\`typescript
 // In /app/api/moderation/report-abuse/route.ts
 import { db } from "@/lib/db"; // Your database client
 
@@ -255,26 +255,26 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ success: true });
 }
-```
+\`\`\`
 
 ### 3. Setup Email Notifications
 
 Install email service (example: Resend):
 
-```bash
+\`\`\`bash
 npm install resend
-```
+\`\`\`
 
 Add to `.env.local`:
 
-```env
+\`\`\`env
 RESEND_API_KEY=re_your_api_key
 MODERATOR_EMAILS=mod1@example.com,mod2@example.com
-```
+\`\`\`
 
 Update API route:
 
-```typescript
+\`\`\`typescript
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -294,7 +294,7 @@ async function sendModeratorNotification(report: any) {
     `,
   });
 }
-```
+\`\`\`
 
 ## Customization
 
@@ -302,7 +302,7 @@ async function sendModeratorNotification(report: any) {
 
 Edit `/lib/content-filter.ts`:
 
-```typescript
+\`\`\`typescript
 const customProfanity = [
   "your_word_1",
   "your_word_2",
@@ -315,11 +315,11 @@ const allProfanity = [
   ...regionalProfanity,
   ...customProfanity, // Add your list
 ];
-```
+\`\`\`
 
 ### Change Severity Thresholds
 
-```typescript
+\`\`\`typescript
 // In content-filter.ts
 export function validateContent(content: any, strictMode: boolean = true) {
   // Change this threshold
@@ -328,18 +328,18 @@ export function validateContent(content: any, strictMode: boolean = true) {
     errors.push("Description contains offensive language");
   }
 }
-```
+\`\`\`
 
 ### Customize Report Reasons
 
 Edit `/components/moderation/report-abuse-dialog.tsx`:
 
-```typescript
+\`\`\`typescript
 const reportReasons = [
   { value: "custom_reason", label: "Your custom reason" },
   // Add more reasons...
 ];
-```
+\`\`\`
 
 ## Production Checklist
 
