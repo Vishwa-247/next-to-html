@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report No. {{REPORT_NUMBER}} - {{REPORT_TITLE}} | AdvocateKhoj</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00377b',
+            secondary: '#d67c40',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- PHP: include 'includes/header.php'; -->
+  
+  <!-- Header Banner -->
+  <div class="bg-gradient-to-r from-primary via-primary to-secondary text-white py-8">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold mb-2">Law Library</h1>
+      <div class="flex flex-wrap items-center gap-2 text-sm">
+        <a href="/law-library" class="hover:underline">Law Library</a>
+        <span>&gt;</span>
+        <a href="/law-library/law-commission-reports" class="hover:underline">Law Commission Reports</a>
+        <span>&gt;</span>
+        <span class="truncate max-w-xs">{{REPORT_TITLE}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Main Content -->
+      <div class="flex-1">
+        <div class="bg-white rounded-lg shadow-sm border">
+          <div class="p-6">
+            <div class="text-center mb-6">
+              <h2 class="text-xl font-bold text-gray-800 mb-2">Report No. {{REPORT_NUMBER}}</h2>
+              <h3 class="text-lg font-semibold text-gray-700">{{REPORT_TITLE}}</h3>
+            </div>
+
+            <!-- Contents Table -->
+            <div class="mb-8">
+              <table class="w-full border border-gray-300">
+                <thead>
+                  <tr class="bg-gray-100">
+                    <th class="border border-gray-300 px-4 py-2 text-left font-bold">Contents</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- PHP: Loop through chapters -->
+                  <tr>
+                    <td class="border border-gray-300 px-4 py-2">
+                      <strong>Chapter {{CHAPTER_NUMBER}}</strong> - {{CHAPTER_TITLE}}
+                    </td>
+                  </tr>
+                  <!-- End Loop -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Report Content -->
+            <div class="prose max-w-none">
+              <!-- PHP: echo $report_content; -->
+              {{REPORT_CONTENT}}
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex flex-col sm:flex-row justify-between items-center mt-8 pt-6 border-t gap-4">
+              <a href="/law-library/law-commission-reports" class="text-primary hover:text-secondary hover:underline flex items-center gap-1">
+                <i class="fas fa-arrow-left"></i> Back
+              </a>
+              <a href="/law-library/law-commission-reports" class="text-primary hover:text-secondary hover:underline">Index</a>
+              <a href="/law-library/law-commission-reports/{{NEXT_REPORT_ID}}" class="text-primary hover:text-secondary hover:underline flex items-center gap-1">
+                Next <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="w-full lg:w-64 flex-shrink-0">
+        <div class="space-y-6">
+          <div class="bg-red-800 text-white p-3 rounded">
+            <h3 class="font-bold text-sm">SEARCH Judgements</h3>
+          </div>
+          <div class="bg-blue-600 text-white p-3 rounded">
+            <h3 class="font-bold text-sm">LAW College</h3>
+          </div>
+          <div class="bg-blue-800 text-white p-3 rounded">
+            <h3 class="font-bold text-sm">LAW Dictionary</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHP: include 'includes/footer.php'; -->
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

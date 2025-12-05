@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TIP_TITLE}} | AdvocateKhoj Law Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00377b',
+            secondary: '#d67c40',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- PHP: include 'includes/header.php'; -->
+  
+  <!-- Header Banner -->
+  <div class="bg-gradient-to-r from-primary via-primary to-secondary text-white py-8">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold mb-2">Law Library</h1>
+      <div class="flex flex-wrap items-center gap-2 text-sm">
+        <a href="/law-library" class="hover:underline">Law Library</a>
+        <span>&gt;</span>
+        <a href="/law-library/legal-tips" class="hover:underline">Legal Tips</a>
+        <span>&gt;</span>
+        <span class="truncate max-w-xs">{{TIP_TITLE}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-lg shadow-sm border">
+        <div class="p-6 border-b">
+          <h2 class="text-xl font-bold text-gray-800">{{TIP_NUMBER}}. {{TIP_TITLE}}</h2>
+        </div>
+
+        <div class="p-8">
+          <div class="prose max-w-none">
+            <!-- PHP: echo $tip_content; -->
+            <p class="mb-4 text-gray-700 leading-relaxed">{{TIP_CONTENT}}</p>
+          </div>
+
+          <!-- Navigation -->
+          <div class="mt-8 pt-4 border-t">
+            <a href="/law-library/legal-tips" class="text-primary hover:text-secondary hover:underline inline-flex items-center gap-1">
+              <i class="fas fa-arrow-left"></i> Back to Legal Tips
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHP: include 'includes/footer.php'; -->
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{FORM_TITLE}} | AdvocateKhoj Law Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00377b',
+            secondary: '#d67c40',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- PHP: include 'includes/header.php'; -->
+  
+  <!-- Header Banner -->
+  <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-8">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold mb-2">Law Library</h1>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Navigation -->
+    <div class="mb-6">
+      <a href="/law-library/forms/central/{{DEPARTMENT_ID}}" class="text-primary hover:text-secondary hover:underline inline-flex items-center gap-1">
+        <i class="fas fa-arrow-left"></i> Back to {{DEPARTMENT_TITLE}}
+      </a>
+    </div>
+
+    <!-- Content -->
+    <div class="bg-white p-6 rounded shadow-sm">
+      <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+        <div>
+          <h1 class="text-2xl font-bold">{{FORM_TITLE}}</h1>
+          <p class="text-gray-600 mt-2">{{FORM_DESCRIPTION}}</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-primary/90 transition-colors">
+            <i class="fas fa-download mr-1"></i> Download PDF
+          </button>
+          <button class="bg-green-600 text-white px-4 py-2 rounded text-sm hover:bg-green-700 transition-colors">
+            <i class="fas fa-edit mr-1"></i> Fill Online
+          </button>
+        </div>
+      </div>
+
+      <div class="border border-gray-300 rounded p-6 bg-gray-50">
+        <h3 class="font-semibold mb-4">Form Preview:</h3>
+        <pre class="whitespace-pre-wrap font-mono text-sm text-gray-700 leading-relaxed overflow-x-auto">
+<!-- PHP: echo $form_content; -->
+{{FORM_CONTENT}}
+        </pre>
+      </div>
+
+      <!-- Download Section -->
+      <div class="mt-8 pt-4 border-t bg-gray-50 p-4 rounded">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-lg">Download or Fill This Form</h3>
+            <p class="text-gray-600 text-sm">Get the complete form in PDF format or fill it online</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button class="bg-primary text-white px-6 py-3 rounded hover:bg-primary/90 font-medium transition-colors">
+              <i class="fas fa-file-pdf mr-2"></i>Download PDF
+            </button>
+            <button class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 font-medium transition-colors">
+              <i class="fas fa-edit mr-2"></i>Fill Online Form
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHP: include 'includes/footer.php'; -->
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

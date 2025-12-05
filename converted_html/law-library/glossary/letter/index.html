@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary - Letter {{LETTER}} | AdvocateKhoj Law Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00377b',
+            secondary: '#d67c40',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- PHP: include 'includes/header.php'; -->
+  
+  <!-- Header Banner -->
+  <div class="bg-gradient-to-r from-primary via-primary to-secondary text-white py-8">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold mb-2">Law Library</h1>
+      <div class="flex items-center gap-2 text-sm">
+        <a href="/law-library" class="hover:underline">Law Library</a>
+        <span>&gt;</span>
+        <a href="/law-library/glossary" class="hover:underline">Glossary</a>
+        <span>&gt;</span>
+        <span>Letter {{LETTER}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="bg-white rounded-lg shadow-sm border">
+      <div class="p-6 border-b">
+        <h2 class="text-xl font-bold text-gray-800 text-center">Glossary - Letter {{LETTER}}</h2>
+      </div>
+
+      <div class="p-6">
+        <!-- Alphabet Navigation -->
+        <div class="mb-8">
+          <div class="flex flex-wrap justify-center gap-2 mb-4">
+            <!-- PHP: Generate A-Z links -->
+            <a href="/law-library/glossary/a" class="px-2 py-1 text-sm font-medium text-primary hover:underline {{ACTIVE_A}}">A</a>
+            <a href="/law-library/glossary/b" class="px-2 py-1 text-sm font-medium text-primary hover:underline {{ACTIVE_B}}">B</a>
+            <a href="/law-library/glossary/c" class="px-2 py-1 text-sm font-medium text-primary hover:underline {{ACTIVE_C}}">C</a>
+            <a href="/law-library/glossary/d" class="px-2 py-1 text-sm font-medium text-primary hover:underline">D</a>
+            <a href="/law-library/glossary/e" class="px-2 py-1 text-sm font-medium text-primary hover:underline">E</a>
+            <a href="/law-library/glossary/f" class="px-2 py-1 text-sm font-medium text-primary hover:underline">F</a>
+            <a href="/law-library/glossary/g" class="px-2 py-1 text-sm font-medium text-primary hover:underline">G</a>
+            <a href="/law-library/glossary/h" class="px-2 py-1 text-sm font-medium text-primary hover:underline">H</a>
+            <a href="/law-library/glossary/i" class="px-2 py-1 text-sm font-medium text-primary hover:underline">I</a>
+            <a href="/law-library/glossary/j" class="px-2 py-1 text-sm font-medium text-primary hover:underline">J</a>
+            <a href="/law-library/glossary/k" class="px-2 py-1 text-sm font-medium text-primary hover:underline">K</a>
+            <a href="/law-library/glossary/l" class="px-2 py-1 text-sm font-medium text-primary hover:underline">L</a>
+            <a href="/law-library/glossary/m" class="px-2 py-1 text-sm font-medium text-primary hover:underline">M</a>
+            <a href="/law-library/glossary/n" class="px-2 py-1 text-sm font-medium text-primary hover:underline">N</a>
+            <a href="/law-library/glossary/o" class="px-2 py-1 text-sm font-medium text-primary hover:underline">O</a>
+            <a href="/law-library/glossary/p" class="px-2 py-1 text-sm font-medium text-primary hover:underline">P</a>
+            <a href="/law-library/glossary/q" class="px-2 py-1 text-sm font-medium text-primary hover:underline">Q</a>
+            <a href="/law-library/glossary/r" class="px-2 py-1 text-sm font-medium text-primary hover:underline">R</a>
+            <a href="/law-library/glossary/s" class="px-2 py-1 text-sm font-medium text-primary hover:underline">S</a>
+            <a href="/law-library/glossary/t" class="px-2 py-1 text-sm font-medium text-primary hover:underline">T</a>
+            <a href="/law-library/glossary/u" class="px-2 py-1 text-sm font-medium text-primary hover:underline">U</a>
+            <a href="/law-library/glossary/v" class="px-2 py-1 text-sm font-medium text-primary hover:underline">V</a>
+            <a href="/law-library/glossary/w" class="px-2 py-1 text-sm font-medium text-primary hover:underline">W</a>
+            <a href="/law-library/glossary/x" class="px-2 py-1 text-sm font-medium text-primary hover:underline">X</a>
+            <a href="/law-library/glossary/y" class="px-2 py-1 text-sm font-medium text-primary hover:underline">Y</a>
+            <a href="/law-library/glossary/z" class="px-2 py-1 text-sm font-medium text-primary hover:underline">Z</a>
+          </div>
+        </div>
+
+        <!-- Terms List -->
+        <div class="space-y-6">
+          <!-- PHP: Loop through terms -->
+          <div class="border-b border-gray-200 pb-4">
+            <h3 class="font-bold text-gray-800 mb-2">{{TERM}}</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">{{DEFINITION}}</p>
+          </div>
+          <!-- End Loop -->
+
+          <!-- Empty State -->
+          <div class="text-center text-gray-500 py-8 hidden" id="emptyState">
+            <p>No terms found for letter "{{LETTER}}"</p>
+            <p class="text-sm mt-2">Please select another letter from the alphabet above.</p>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-8 text-center">
+          <a href="/law-library/glossary" class="text-primary hover:text-secondary hover:underline">
+            <i class="fas fa-arrow-left mr-1"></i> Back to Glossary Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHP: include 'includes/footer.php'; -->
+  <script src="/scripts/main.js"></script>
+</body>
+</html>
