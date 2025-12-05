@@ -1,0 +1,150 @@
+<!--
+  Original Next.js path: /law-colleges
+  Dynamic placeholders: Law colleges from database
+  Server endpoints: GET /api/law-colleges
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Colleges - AdvocateKhoj</title>
+    <meta name="description" content="Discover law colleges, admissions, conferences, and career opportunities in legal field.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+    <link href="../styles/global.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center">
+                <img src="../assets/images/logo.svg" alt="AdvocateKhoj" class="h-14 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../client-area/index.html" class="text-sm font-medium text-gray-700 hover:text-primary">Post a Case</a>
+                <a href="../advocate-area/index.html" class="text-sm font-medium text-gray-700 hover:text-primary">Join as Advocate</a>
+                <a href="index.html" class="text-sm font-medium text-primary border-b-2 border-primary pb-1">Law College</a>
+                <a href="../law-library/index.html" class="text-sm font-medium text-gray-700 hover:text-primary">Law Library</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-3">
+                <a href="../login/index.html" class="px-4 py-2 text-sm font-medium rounded-md bg-primary text-white">Log In</a>
+                <a href="../register/index.html" class="px-4 py-2 text-sm font-medium rounded-md bg-secondary text-white">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Header Section -->
+            <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8 mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                    <h1 class="text-4xl font-bold text-primary">Law Colleges</h1>
+                </div>
+                <p class="text-gray-700 max-w-3xl">
+                    Discover top law colleges across India. Find information about admissions, courses, faculty, and career opportunities in the legal field.
+                </p>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="bg-white border rounded-lg p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <input type="text" placeholder="Search colleges..." class="px-3 py-2 border border-gray-300 rounded-md">
+                    <select class="px-3 py-2 border border-gray-300 rounded-md">
+                        <option value="">Select State</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="tamil-nadu">Tamil Nadu</option>
+                    </select>
+                    <select class="px-3 py-2 border border-gray-300 rounded-md">
+                        <option value="">Select Course</option>
+                        <option value="llb">LLB</option>
+                        <option value="ba-llb">BA LLB</option>
+                        <option value="bba-llb">BBA LLB</option>
+                        <option value="llm">LLM</option>
+                    </select>
+                    <button class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90">Search</button>
+                </div>
+            </div>
+
+            <!-- Colleges Grid -->
+            <!-- Server endpoint: GET /api/law-colleges -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- College Card 1 -->
+                <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">National Law School of India University</h3>
+                        <p class="text-sm text-gray-600 mb-3">Bangalore, Karnataka</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">BA LLB</span>
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">LLM</span>
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">PhD</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-primary hover:underline text-sm">
+                            View Details
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- College Card 2 -->
+                <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-secondary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">National Law University, Delhi</h3>
+                        <p class="text-sm text-gray-600 mb-3">New Delhi</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded">BA LLB</span>
+                            <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded">LLM</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-secondary hover:underline text-sm">
+                            View Details
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- College Card 3 -->
+                <div class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-200 to-green-50 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">NALSAR University of Law</h3>
+                        <p class="text-sm text-gray-600 mb-3">Hyderabad, Telangana</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">BA LLB</span>
+                            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">LLM</span>
+                            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">MBL</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-green-600 hover:underline text-sm">
+                            View Details
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-8">
+                <button class="px-6 py-2 border rounded-md hover:bg-gray-50">Load More Colleges</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+        <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 AdvocateKhoj. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>
