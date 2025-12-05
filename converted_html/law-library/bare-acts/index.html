@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bare Acts | Law Library | AdvocateKhoj</title>
+    <meta name="description" content="Browse comprehensive collection of Indian Bare Acts - Central and State legislation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../../styles/global.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00377b',
+                        'primary-dark': '#001944',
+                        secondary: '#d67c40',
+                        'secondary-dark': '#c26a36',
+                        accent: '#f17313',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-primary-dark/20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="../../index.html" class="flex items-center hover:opacity-85 transition-opacity">
+                <img src="../../assets/logo.svg" alt="AdvocateKhoj Logo" class="h-14 w-auto sm:h-16" onerror="this.src='https://via.placeholder.com/140x80?text=AdvocateKhoj'">
+            </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../../client-area/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-primary-dark hover:text-primary border-transparent hover:border-primary/60">Post a Case</a>
+                <a href="../../advocate-area/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-primary-dark hover:text-primary border-transparent hover:border-primary/60">Join as Advocate</a>
+                <a href="../../law-colleges/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-primary-dark hover:text-primary border-transparent hover:border-primary/60">Law College</a>
+                <a href="../../sawal-jawab/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-primary-dark hover:text-primary border-transparent hover:border-primary/60">Sawal Jawab</a>
+                <a href="../../law-library/index.html" class="text-sm font-medium tracking-wide uppercase transition-colors pb-2 border-b-2 text-primary-dark border-accent">Law Library</a>
+            </nav>
+            <div class="hidden md:flex items-center space-x-3">
+                <a href="../../login/index.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-gradient-to-r from-primary to-[#1453a3] text-white shadow-md transition-all duration-200">Log In</a>
+                <a href="../../register/index.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md bg-secondary text-white font-semibold shadow-md transition-all duration-200">Register</a>
+            </div>
+            <button class="md:hidden text-primary-dark p-2 hover:bg-gray-100 rounded-md transition-colors" id="mobile-menu-btn">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden border-t border-primary-dark/10 bg-white/95 backdrop-blur hidden" id="mobile-menu">
+            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
+                <a href="../../client-area/index.html" class="block text-sm font-semibold uppercase tracking-wide text-primary-dark hover:text-primary transition-colors py-2">Post a Case</a>
+                <a href="../../advocate-area/index.html" class="block text-sm font-semibold uppercase tracking-wide text-primary-dark hover:text-primary transition-colors py-2">Join as Advocate</a>
+                <a href="../../law-colleges/index.html" class="block text-sm font-semibold uppercase tracking-wide text-primary-dark hover:text-primary transition-colors py-2">Law College</a>
+                <a href="../../sawal-jawab/index.html" class="block text-sm font-semibold uppercase tracking-wide text-primary-dark hover:text-primary transition-colors py-2">Sawal Jawab</a>
+                <a href="../../law-library/index.html" class="block text-sm font-semibold uppercase tracking-wide text-primary py-2">Law Library</a>
+                <div class="pt-4 border-t border-primary-dark/10 space-y-3">
+                    <a href="../../login/index.html" class="block w-full px-4 py-3 text-center bg-gradient-to-r from-primary to-[#1453a3] text-white rounded-md font-medium">Log In</a>
+                    <a href="../../register/index.html" class="block w-full px-4 py-3 text-center bg-secondary text-white rounded-md font-medium">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 py-8 md:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <nav class="flex mb-6" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="../../index.html" class="text-gray-500 hover:text-primary text-sm">Home</a>
+                    </li>
+                    <li><svg class="w-4 h-4 text-gray-400 mx-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+                    <li class="inline-flex items-center">
+                        <a href="../index.html" class="text-gray-500 hover:text-primary text-sm">Law Library</a>
+                    </li>
+                    <li><svg class="w-4 h-4 text-gray-400 mx-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+                    <li class="text-primary font-medium text-sm">Bare Acts</li>
+                </ol>
+            </nav>
+
+            <!-- Page Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Bare Acts</h1>
+                <p class="text-lg text-gray-600">Browse our comprehensive collection of Indian Bare Acts including Central and State legislation.</p>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="md:col-span-2">
+                        <label class="form-label" for="searchActs">Search Bare Acts</label>
+                        <div class="relative">
+                            <input type="text" id="searchActs" class="form-input pl-10" placeholder="Search by act name, year, or keyword...">
+                            <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label" for="filterCategory">Filter by Category</label>
+                        <select id="filterCategory" class="form-select">
+                            <option value="">All Categories</option>
+                            <option value="central">Central Acts</option>
+                            <option value="state">State Acts</option>
+                            <option value="constitutional">Constitutional</option>
+                            <option value="criminal">Criminal</option>
+                            <option value="civil">Civil</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="labour">Labour</option>
+                            <option value="taxation">Taxation</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Central Acts -->
+                <a href="#central" class="group bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">Central Acts</h3>
+                    <p class="text-gray-600 text-sm mb-3">Laws enacted by the Parliament of India applicable across the country.</p>
+                    <span class="text-primary text-sm font-medium"><!-- PLACEHOLDER: [CENTRAL_ACTS_COUNT] --> 500+ Acts</span>
+                </a>
+
+                <!-- State Acts -->
+                <a href="#state" class="group bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+                        <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-secondary transition-colors">State Acts</h3>
+                    <p class="text-gray-600 text-sm mb-3">State-specific legislation enacted by various State Legislatures.</p>
+                    <span class="text-secondary text-sm font-medium"><!-- PLACEHOLDER: [STATE_ACTS_COUNT] --> 200+ Acts</span>
+                </a>
+
+                <!-- Constitutional Laws -->
+                <a href="#constitutional" class="group bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">Constitutional Laws</h3>
+                    <p class="text-gray-600 text-sm mb-3">Constitution of India and Constitutional Amendments.</p>
+                    <span class="text-primary text-sm font-medium">105 Amendments</span>
+                </a>
+            </div>
+
+            <!-- Popular Bare Acts -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Popular Bare Acts</h2>
+                <!-- SERVER ENDPOINT: GET /api/law-library/bare-acts/popular -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Act Name</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden md:table-cell">Year</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden lg:table-cell">Category</th>
+                                    <th class="px-6 py-4 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <a href="#" class="font-medium text-gray-900 hover:text-primary transition-colors">Indian Penal Code</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 hidden md:table-cell">1860</td>
+                                    <td class="px-6 py-4 hidden lg:table-cell"><span class="badge badge-primary">Criminal</span></td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="#" class="text-primary hover:text-primary-dark font-medium text-sm">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <a href="#" class="font-medium text-gray-900 hover:text-primary transition-colors">Code of Civil Procedure</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 hidden md:table-cell">1908</td>
+                                    <td class="px-6 py-4 hidden lg:table-cell"><span class="badge badge-secondary">Civil</span></td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="#" class="text-primary hover:text-primary-dark font-medium text-sm">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <a href="#" class="font-medium text-gray-900 hover:text-primary transition-colors">Indian Evidence Act</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 hidden md:table-cell">1872</td>
+                                    <td class="px-6 py-4 hidden lg:table-cell"><span class="badge badge-primary">Evidence</span></td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="#" class="text-primary hover:text-primary-dark font-medium text-sm">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <a href="#" class="font-medium text-gray-900 hover:text-primary transition-colors">Code of Criminal Procedure</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 hidden md:table-cell">1973</td>
+                                    <td class="px-6 py-4 hidden lg:table-cell"><span class="badge badge-primary">Criminal</span></td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="#" class="text-primary hover:text-primary-dark font-medium text-sm">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <a href="#" class="font-medium text-gray-900 hover:text-primary transition-colors">Companies Act</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 hidden md:table-cell">2013</td>
+                                    <td class="px-6 py-4 hidden lg:table-cell"><span class="badge badge-secondary">Commercial</span></td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="#" class="text-primary hover:text-primary-dark font-medium text-sm">View</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <a href="#" class="font-medium text-gray-900 hover:text-primary transition-colors">Income Tax Act</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-600 hidden md:table-cell">1961</td>
+                                    <td class="px-6 py-4 hidden lg:table-cell"><span class="badge badge-secondary">Taxation</span></td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="#" class="text-primary hover:text-primary-dark font-medium text-sm">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alphabetical Index -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Browse Alphabetically</h2>
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#A" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">A</a>
+                        <a href="#B" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">B</a>
+                        <a href="#C" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">C</a>
+                        <a href="#D" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">D</a>
+                        <a href="#E" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">E</a>
+                        <a href="#F" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">F</a>
+                        <a href="#G" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">G</a>
+                        <a href="#H" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">H</a>
+                        <a href="#I" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">I</a>
+                        <a href="#J" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">J</a>
+                        <a href="#K" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">K</a>
+                        <a href="#L" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">L</a>
+                        <a href="#M" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">M</a>
+                        <a href="#N" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">N</a>
+                        <a href="#O" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">O</a>
+                        <a href="#P" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">P</a>
+                        <a href="#Q" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-400 cursor-not-allowed">Q</a>
+                        <a href="#R" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">R</a>
+                        <a href="#S" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">S</a>
+                        <a href="#T" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">T</a>
+                        <a href="#U" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">U</a>
+                        <a href="#V" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">V</a>
+                        <a href="#W" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-white transition-colors">W</a>
+                        <a href="#X" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-400 cursor-not-allowed">X</a>
+                        <a href="#Y" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-400 cursor-not-allowed">Y</a>
+                        <a href="#Z" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-400 cursor-not-allowed">Z</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white border-t-4 border-primary-dark mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-primary-dark pb-2 mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../about/index.html" class="text-white/90 hover:text-white transition-colors text-sm">About Us</a></li>
+                        <li><a href="../../contact/index.html" class="text-white/90 hover:text-white transition-colors text-sm">Contact Us</a></li>
+                        <li><a href="../../privacy-policy/index.html" class="text-white/90 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-primary-dark pb-2 mb-4">Law Library</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-white/90 hover:text-white transition-colors text-sm">Browse Library</a></li>
+                        <li><a href="index.html" class="text-white/90 hover:text-white transition-colors text-sm">Bare Acts</a></li>
+                        <li><a href="../judgements/index.html" class="text-white/90 hover:text-white transition-colors text-sm">Judgements</a></li>
+                        <li><a href="../forms/index.html" class="text-white/90 hover:text-white transition-colors text-sm">Legal Forms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-primary-dark pb-2 mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../../client-area/index.html" class="text-white/90 hover:text-white transition-colors text-sm">Post a Case</a></li>
+                        <li><a href="../../advocate-area/index.html" class="text-white/90 hover:text-white transition-colors text-sm">Join as Advocate</a></li>
+                        <li><a href="../../sawal-jawab/index.html" class="text-white/90 hover:text-white transition-colors text-sm">Sawal Jawab</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white border-b-2 border-primary-dark pb-2 mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/90 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="text-white/90 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                        </a>
+                        <a href="#" class="text-white/90 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667h-3.554v-11.452h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zm-15.11-13.019c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019h-3.564v-11.452h3.564v11.452zm15.106-20.452h-20.454c-.979 0-1.771.774-1.771 1.729v20.542c0 .956.792 1.729 1.771 1.729h20.451c.978 0 1.778-.773 1.778-1.729v-20.542c0-.955-.8-1.729-1.778-1.729z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p class="text-white/80 text-sm">Copyright &copy; 2025 AdvocateKhoj.com. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-dark transition-all duration-300 z-50">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <script src="../../scripts/main.js"></script>
+</body>
+</html>

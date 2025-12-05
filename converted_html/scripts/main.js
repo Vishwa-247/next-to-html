@@ -1,10 +1,10 @@
 /**
  * AdvocateKhoj - Main JavaScript
  * Static HTML version with vanilla JavaScript
+ * All interactions: mobile menu, smooth scroll, back-to-top, accordion, tabs, forms, toast
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize all modules
   MobileMenu.init()
   SmoothScroll.init()
   ActiveLinks.init()
@@ -22,7 +22,7 @@ const MobileMenu = {
   init() {
     const mobileMenuBtn = document.getElementById("mobile-menu-btn")
     const mobileMenu = document.getElementById("mobile-menu")
-    const menuIcon = mobileMenuBtn?.querySelector("svg")
+    const menuIcon = document.getElementById("menu-icon")
 
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener("click", () => {
@@ -50,6 +50,17 @@ const MobileMenu = {
               '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>'
           }
         })
+      })
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add("hidden")
+          if (menuIcon) {
+            menuIcon.innerHTML =
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>'
+          }
+        }
       })
     }
   },
@@ -88,12 +99,18 @@ const SmoothScroll = {
 const ActiveLinks = {
   init() {
     const currentPath = window.location.pathname
-    const filename = currentPath.split("/").pop() || "index.html"
+    const pathParts = currentPath.split("/").filter(Boolean)
 
     document.querySelectorAll("nav a").forEach((link) => {
       const href = link.getAttribute("href")
-      if (href && (href === filename || href.includes(filename.replace(".html", "")))) {
-        link.classList.add("active", "border-[#f17313]")
+      if (!href) return
+
+      const hrefParts = href.split("/").filter(Boolean)
+      const hrefMainPart = hrefParts[0] || ""
+      const currentMainPart = pathParts[0] || ""
+
+      if (hrefMainPart && currentMainPart && hrefMainPart === currentMainPart) {
+        link.classList.add("border-accent", "text-primary-dark")
         link.classList.remove("border-transparent")
       }
     })
@@ -196,12 +213,19 @@ const Tabs = {
  */
 const Forms = {
   init() {
-    document.querySelectorAll("form").forEach((form) => {
+    document.querySelectorAll("form[data-ajax]").forEach((form) => {
       form.addEventListener("submit", function (e) {
         e.preventDefault()
 
         const submitBtn = this.querySelector('button[type="submit"]')
         const originalText = submitBtn?.textContent
+
+        // Validate form
+        const isValid = this.checkValidity()
+        if (!isValid) {
+          Toast.show("Please fill in all required fields.", "error")
+          return
+        }
 
         if (submitBtn) {
           submitBtn.disabled = true
@@ -230,13 +254,12 @@ const Toast = {
   container: null,
 
   init() {
-    // Create toast container if it doesn't exist
-    if (!document.querySelector(".toast-container")) {
+    this.container = document.getElementById("toast-container")
+    if (!this.container) {
       this.container = document.createElement("div")
-      this.container.className = "toast-container"
+      this.container.id = "toast-container"
+      this.container.className = "fixed top-4 right-4 z-50 space-y-2"
       document.body.appendChild(this.container)
-    } else {
-      this.container = document.querySelector(".toast-container")
     }
   },
 
@@ -245,14 +268,19 @@ const Toast = {
     toast.className = `toast toast-${type}`
     toast.innerHTML = `
       <div class="flex items-center gap-3">
-        <svg class="w-5 h-5 ${type === "success" ? "text-green-600" : "text-red-600"}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 flex-shrink-0 ${type === "success" ? "text-green-600" : "text-red-600"}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           ${
             type === "success"
               ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>'
               : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
           }
         </svg>
-        <span class="text-sm font-medium">${message}</span>
+        <span class="text-sm font-medium text-gray-800">${message}</span>
+        <button class="ml-2 text-gray-400 hover:text-gray-600" onclick="this.closest('.toast').remove()">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
       </div>
     `
 
@@ -292,18 +320,5 @@ const FAQSearch = {
   },
 }
 
-// Add slideOut animation
-const style = document.createElement("style")
-style.textContent = `
-  @keyframes slideOut {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-  }
-`
-document.head.appendChild(style)
+// Make Toast globally accessible
+window.Toast = Toast
